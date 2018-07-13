@@ -1,0 +1,38 @@
+\documentclass[letterpaper,11pt]{ctexart}
+\usepackage{../theme/sbmzhcn}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{\href{https://www.love4026.org/about/}{\Large 张雷}} & \textbf{\Large 个人简历} \\
+浦东新区, 上海                                      & 176 2162 2029\\
+\sffamily 最后更新: \today                        & \href{mailto:love4026@gmail.com}{love4026@gmail.com}
+\end{tabular*}
+\input{../components/skills}
+\input{../components/work}
+\input{../components/education}
+\section{\textbf{链接}}
+  \resumeSubHeadingListStart
+    \resumeSubItem{我的 Github}
+      {\href{https://github.com/sbmzhcn/}{github.com/sbmzhcn}}
+    \resumeSubItem{个人博客}
+      {\href{https://www.love4026.org}{www.love4026.org}}
+      {或者}
+      {\href{https://sbmzhcn.github.io}{sbmzhcn.github.io}} (基于hexo与travis自动构建工具，访问可能需要翻墙)
+    \resumeSubItem{V2EX}
+      {\href{https://www.v2ex.com/member/sbmzhcn}{v2ex.com/member/sbmzhcn}}
+    % \resumeItem{询盘系统}
+    %   {\href{http://info.shibangsoft.com}{info.shibangsoft.com}}
+    % \resumeItem{域名系统}
+    %   {\href{http://domain.shibangsoft.com}{domain.shibangsoft.com}} (基于Python, Tornado开发)
+    % \resumeItem{留言板系统}
+    %   {\href{http://inquiry.sbmchina.com}{inquiry.sbmchina.com}}
+  \resumeSubHeadingListEnd
+\input{../components/publications}
+\section{\textbf{我的微信}}
+  \includegraphics[width=2in,height=2in]{weixin.png}
+
+\cfoot{本简历使用LaTex生成}
+\end{document}

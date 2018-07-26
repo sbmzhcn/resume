@@ -6,20 +6,22 @@ export TZ='Asia/Shanghai'
 # git clone -b master git@github.com:sbmzhcn/resume.git
 cd resume
 
-ls /usr/share/fonts/
-fc-list :lang-zh
+# ls /usr/share/fonts/
+# fc-list :lang-zh
 
 # start create pdf
 touch resume.tex
 xelatex resume.tex -interaction=nonstopmode
 rm -rf *.log *.aux *.out *.fls *.fdb_latexmk *.gz
-rm -rf fonts.dir fonts.scale pandoc-*
 
-ls
+
+ls -la
 # start commit
 cd ..
+rm -rf fonts.dir fonts.scale pandoc-*
 
-ls
+ls -la
+git status
 
 git add .
 git commit -m "Resume updated: `date +"%Y-%m-%d %H:%M:%S"`"

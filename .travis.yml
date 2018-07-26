@@ -6,6 +6,7 @@ language: generic
 before_install:
 - wget https://github.com/jgm/pandoc/releases/download/1.19.1/pandoc-1.19.1-1-amd64.deb
 - sudo dpkg -i pandoc-1.19.1-1-amd64.deb
+- sudo apt install ttf-mscorefonts-installer
 # 赋予自动部署脚本可执行权限
 - chmod +x .travis/deploy.sh
 
@@ -21,7 +22,6 @@ addons:
   - love4026.org
   apt:
     packages:
-    - texlive-full
     - texlive-xetex
     - texlive-latex-extra
     - texlive-fonts-recommended

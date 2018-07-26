@@ -4,6 +4,11 @@ export TZ='Asia/Shanghai'
 
 # 先 clone 再 commit，避免直接 force commit
 # git clone -b master git@github.com:sbmzhcn/resume.git
+
+
+git checkout master
+
+
 cd resume
 
 # ls /usr/share/fonts/

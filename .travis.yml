@@ -37,7 +37,6 @@ addons:
     - lmodern
     - texlive-lang-cjk
     - texlive-fonts-extra
-    - texlive-lang-chinese
 
 # configure notifications (email, IRC, campfire etc)
 # please update this section to your needs!

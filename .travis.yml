@@ -26,6 +26,7 @@ addons:
     - latex-xcolor
     - latex-cjk-all
     - lmodern
+    - texlive-lang-cjk
 
 # configure notifications (email, IRC, campfire etc)
 # please update this section to your needs!

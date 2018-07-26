@@ -19,19 +19,15 @@ touch resume.tex
 xelatex resume.tex -interaction=nonstopmode
 rm -rf *.log *.aux *.out *.fls *.fdb_latexmk *.gz
 
-
-ls -la
 # start commit
 cd ..
-rm -rf fonts.dir fonts.scale pandoc-*
 
 ls -la
+rm -rf fonts.dir fonts.scale pandoc-*
 git status
 
-git add .
-git commit -m "Resume updated: `date +"%Y-%m-%d %H:%M:%S"`"
-
-git status
+git add resume/resume.pdf
+git commit -m "Resume updated: `date +"%Y-%m-%d %H:%M:%S"` [ci skip]"
 
 #git push vps master:master --force --quiet
 git push --force https://$REPO_TOKEN@github.com/sbmzhcn/resume.git master

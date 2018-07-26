@@ -6,6 +6,8 @@ export TZ='Asia/Shanghai'
 # git clone -b master git@github.com:sbmzhcn/resume.git
 cd resume
 
+ls /usr/share/fonts/
+
 # start create pdf
 touch resume.tex
 xelatex resume.tex -interaction=nonstopmode

@@ -7,6 +7,7 @@ export TZ='Asia/Shanghai'
 cd resume
 
 ls /usr/share/fonts/
+fc-list :lang-zh
 
 # start create pdf
 touch resume.tex

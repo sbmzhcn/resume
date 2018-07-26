@@ -13,12 +13,18 @@ fc-list :lang-zh
 touch resume.tex
 xelatex resume.tex -interaction=nonstopmode
 rm -rf *.log *.aux *.out *.fls *.fdb_latexmk *.gz
+rm -rf fonts.dir fonts.scale pandoc-*
 
+ls
 # start commit
 cd ..
+
+ls
 
 git add .
 git commit -m "Resume updated: `date +"%Y-%m-%d %H:%M:%S"`"
 
+git status
+
 #git push vps master:master --force --quiet
-git push --force --quiet https://$REPO_TOKEN@github.com/sbmzhcn/resume.git master
+git push --force https://$REPO_TOKEN@github.com/sbmzhcn/resume.git master

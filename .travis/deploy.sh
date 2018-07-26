@@ -14,4 +14,4 @@ git add .
 git commit -m "Resume updated: `date +"%Y-%m-%d %H:%M:%S"`"
 
 #git push vps master:master --force --quiet
-git push origin master:master --force --quiet
+git push --force --quiet https://$REPO_TOKEN@github.com/sbmzhcn/resume.git master

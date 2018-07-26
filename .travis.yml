@@ -1,4 +1,5 @@
 
+sudo: required
 language: generic
 
 
@@ -20,6 +21,7 @@ addons:
   - love4026.org
   apt:
     packages:
+    - texlive-full
     - texlive-xetex
     - texlive-latex-extra
     - texlive-fonts-recommended

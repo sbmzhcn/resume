@@ -3,25 +3,19 @@
 \setCJKmainfont[ItalicFont={Adobe Heiti Std}]{Adobe Heiti Std} %设置中文默认字体
 \setCJKsansfont{Adobe Heiti Std} %设置文泉驿正黑字体作为中文无衬线字体
 \setCJKmonofont{Adobe Heiti Std} %设置文泉驿等宽正黑字体作为中文打字机字体
+\usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{../theme/sbmzhcn}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
 \begin{document}
-
-*** 
- 
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r} 
- 
+***
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{\href{https://www.love4026.org/about/}{\Large 张雷}} & \textbf{\Large 个人简历} \\
-
 浦东新区, 上海                                      & 176 2162 2029\\
-
 \sffamily 最后更新: \today                        & \href{mailto:love4026@gmail.com}{love4026@gmail.com}
-
 \end{tabular*}
-
 \input{../components/skills}
 \input{../components/work}
 \input{../components/education}

@@ -24,9 +24,16 @@ pdfkeywords={Resume, Ray Chang},
   urlcolor=linkcolor,
   linkcolor=linkcolor
 }
+% page number
+\usepackage{lastpage}
+\usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyhead{}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+
+% \fancyhf{} % clear all header and footer fields
+% \fancyfoot{}
+
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 % Adjust margins

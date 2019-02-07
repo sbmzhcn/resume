@@ -11,8 +11,6 @@
 sudo apt-get install texlive-xetex latex-cjk-all
 ```
 
-使用自动构建工具导致 PDF头部布局有一些错位。
-
 ## 关键词（供搜索用）
 
 JavaScript 前端 React PHP Python 个人简历

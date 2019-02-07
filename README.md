@@ -3,7 +3,8 @@
 我的个人简历
 
 * [Resume](./resume/resume.pdf)
-* [又拍云地址](http://blog-music.test.upcdn.net/resume.pdf)
+* [备用地址1](http://sbmzhcn.github.io/resume.pdf)
+* [备用地址2](http://shibangsoft.com/resume.pdf)
 
 # Ubuntu下安装LaTex
 

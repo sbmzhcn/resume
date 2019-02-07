@@ -3,8 +3,8 @@
 我的个人简历
 
 * [Resume](./resume/resume.pdf)
-* [备用地址1](http://sbmzhcn.github.io/resume.pdf)
-* [备用地址2](http://shibangsoft.com/resume.pdf)
+* [备用地址1-Github地址](http://sbmzhcn.github.io/resume.pdf)
+* [备用地址2-国内访问](http://www.shibangsoft.com/resume.pdf)
 
 # Ubuntu下安装LaTex
 

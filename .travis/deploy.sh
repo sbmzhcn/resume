@@ -17,6 +17,7 @@ cd resume
 # start create pdf
 touch resume.tex
 xelatex resume.tex -interaction=nonstopmode
+xelatex resume.tex -interaction=nonstopmode
 rm -rf *.log *.aux *.out *.fls *.fdb_latexmk *.gz
 
 # start commit

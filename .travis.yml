@@ -36,7 +36,7 @@ addons:
     - latex-cjk-all
     - lmodern
     - texlive-lang-cjk
-    - texlive-fonts-extra
+    # - texlive-fonts-extra
 
 # configure notifications (email, IRC, campfire etc)
 # please update this section to your needs!

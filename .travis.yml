@@ -35,7 +35,8 @@ deploy:
 #     - /^v[\d.]+\d$/
 
 after_success:
-# 部署到 GitHub Pages 和 VPS
+  # push to ftp
+  - ncftpput -R -v -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / ../build/resume.pdf
 
 addons:
   ssh_know_hosts:
@@ -48,7 +49,7 @@ addons:
     - texlive-fonts-recommended
     - latex-xcolor
     - lmodern
-    - latex-cjk-all
+    # - latex-cjk-all
     - texlive-lang-cjk
     # - texlive-fonts-extra
 

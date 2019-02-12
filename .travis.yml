@@ -43,7 +43,7 @@ addons:
     - texlive-fonts-recommended
     - latex-xcolor
     - lmodern
-    # - latex-cjk-all
+    - latex-cjk-all
     # - texlive-lang-cjk
     # - texlive-fonts-extra
 

@@ -34,4 +34,4 @@ git push --force --quiet "https://yzv:${CO_TOKEN}@git.dev.tencent.com/yzv/yzv.co
 
 # push to ftp
 ping -c 4 $FTP_HOST
-ncftpput -R -v -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / ../build/resume.pdf
+# ncftpput -R -v -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / ../build/resume.pdf

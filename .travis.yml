@@ -20,6 +20,15 @@ before_install:
 script:
 - bash .travis/deploy.sh
 
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $REPO_TOKEN # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: resume/build
+  on:
+    branch: master
+
 after_success:
 # 部署到 GitHub Pages 和 VPS
 
@@ -33,9 +42,9 @@ addons:
     - texlive-latex-extra
     - texlive-fonts-recommended
     - latex-xcolor
-    - latex-cjk-all
     - lmodern
-    - texlive-lang-cjk
+    # - latex-cjk-all
+    # - texlive-lang-cjk
     # - texlive-fonts-extra
 
 # configure notifications (email, IRC, campfire etc)

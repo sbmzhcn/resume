@@ -38,7 +38,7 @@ after_success:
   # push to ftp
   - pwd
   - ls
-  - ncftpput -R -v -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / build/resume.pdf
+  - ncftpput -R -v -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / resume/build/resume.pdf
 
 addons:
   ssh_know_hosts:

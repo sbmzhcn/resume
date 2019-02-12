@@ -44,7 +44,7 @@ addons:
     - latex-xcolor
     - lmodern
     - latex-cjk-all
-    # - texlive-lang-cjk
+    - texlive-lang-cjk
     # - texlive-fonts-extra
 
 # configure notifications (email, IRC, campfire etc)

@@ -23,3 +23,11 @@ rm -rf *.log *.aux *.out *.fls *.fdb_latexmk *.gz
 # move to build dir
 mkdir build
 mv resume.pdf build/
+
+# push to coding
+git clone https://git.coding.net/yzv/yzv.coding.me.git
+cd yzv.coding.me
+cp ../build/resume.pdf resume/
+git add .
+git commit -m "resume.pdf updated: `date +"%Y-%m-%d %H:%M:%S"` [ci skip]"
+git push --force --quiet "https://yzv:${CO_TOKEN}@git.coding.net/yzv/yzv.coding.me.git" master:master

@@ -2,9 +2,11 @@
 
 我的个人简历
 
-* [Resume](./resume/resume.pdf)
-* [备用地址1-Github地址](http://sbmzhcn.github.io/resume.pdf)
-* [备用地址2-国内访问](http://www.shibangsoft.com/resume.pdf)
+* [Resume](./tree/gh-pages/resume.pdf)
+* [Github Pages地址](https://sbmzhcn.github.io/resume/resume.pdf)
+* [备用地址1-国内访问](http://www.shibangsoft.com/resume.pdf)
+
+源码使用Travis CI自动生成PDF文件并发布到gh-page分支上面。
 
 # Ubuntu下安装LaTex
 

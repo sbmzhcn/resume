@@ -16,6 +16,7 @@ before_install:
 - sudo fc-cache -f
 # 赋予自动部署脚本可执行权限
 - chmod +x .travis/deploy.sh
+- sudo apt-get install ncftp -y
 
 script:
 - bash .travis/deploy.sh

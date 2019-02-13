@@ -40,8 +40,28 @@
     %   {\href{http://inquiry.sbmchina.com}{inquiry.sbmchina.com}}
   \resumeSubHeadingListEnd
 \input{../components/publications}
-\section{\textbf{我的微信}}
-  \includegraphics[width=2in,height=2in]{weixin.png}
+\section{\textbf{联系方式}}
+  % \includegraphics[width=2in,height=2in]{weixin.png}
+  \begin{figure}[h]
+    \begin{subfigure}{0.33\textwidth}
+      \includegraphics[width=0.9\linewidth, height=5cm]{weixin.png} 
+      \caption{我的微信}
+      \label{fig:subim1}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+      \includegraphics[width=0.9\linewidth, height=5cm]{vcard.png}
+      \caption{我的名片}
+      \label{fig:subim2}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+      \includegraphics[width=0.9\linewidth, height=5cm]{resume-url.png}
+      \caption{简历地址}
+      \label{fig:subim3}
+    \end{subfigure}
+    
+    \caption{使用微信扫描上面的二维码获取相应的信息}
+    \label{fig:image1}
+  \end{figure}
 
 \cfoot{Page \thepage\ of \pageref{LastPage}\ - 本简历使用LaTex生成}
 \end{document}

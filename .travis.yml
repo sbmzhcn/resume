@@ -38,7 +38,8 @@ after_success:
   # push to ftp
   - pwd
   - ls resume/build/
-  - ncftpput -R -v -F -t 60 -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / resume/build/resume.pdf
+  - curl --ftp-create-dirs -T resume/build/resume.pdf -u $FTP_USER:$FTP_PASS ftp://$FTP_HOST/
+  # - ncftpput -R -v -F -t 60 -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / resume/build/resume.pdf
 
 addons:
   ssh_know_hosts:

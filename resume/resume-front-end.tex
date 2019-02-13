@@ -6,6 +6,7 @@
 \usepackage{../theme/sbmzhcn}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage{subcaption}
 \pagestyle{fancy}
 
 \begin{document}
@@ -33,8 +34,8 @@
       {\href{https://github.com/sbmzhcn/resume}{github.com/sbmzhcn/resume}}
   \resumeSubHeadingListEnd
 \input{../components/front-end/publications}
-\section{\textbf{我的微信}}
-  \includegraphics[width=2in,height=2in]{weixin.png}
+\section{\textbf{联系方式}}
+  \input{../components/qr}
 
 \cfoot{Page \thepage\ of \pageref{LastPage}\ - 本简历使用LaTex生成}
 \end{document}

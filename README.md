@@ -1,4 +1,4 @@
-# 个人简历
+# 个人简历 [![Build Status](https://travis-ci.org/sbmzhcn/resume.svg?branch=master)](https://travis-ci.org/sbmzhcn/resume)
 
 我的个人简历
 

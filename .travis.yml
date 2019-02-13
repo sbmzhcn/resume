@@ -14,9 +14,8 @@ before_install:
 - sudo mkfontscale
 - sudo mkfontdir
 - sudo fc-cache -f
-# 赋予自动部署脚本可执行权限
-- chmod +x .travis/deploy.sh
-- sudo apt-get install ncftp -y
+- chmod +x .travis/deploy.sh # 赋予自动部署脚本可执行权限
+# - sudo apt-get install ncftp -y
 
 script:
 - bash .travis/deploy.sh
@@ -36,9 +35,8 @@ deploy:
 
 after_success:
   # push to ftp
-  - pwd
-  - ls resume/build/
-  - curl --ftp-create-dirs -T resume/build/resume*.pdf -u $FTP_USER:$FTP_PASS ftp://$FTP_HOST/
+  - cd resume/build/
+  - curl --ftp-create-dirs -T "{resume.pdf,resume-front-end.pdf}" -u $FTP_USER:$FTP_PASS ftp://$FTP_HOST/
   # - ncftpput -R -v -F -t 60 -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / resume/build/resume.pdf
 
 addons:

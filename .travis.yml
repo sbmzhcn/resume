@@ -36,7 +36,12 @@ deploy:
 after_success:
   # push to ftp
   - cd resume/build/
-  - curl --ftp-create-dirs -T "{resume.pdf,resume-front-end.pdf}" -u $FTP_USER:$FTP_PASS ftp://$FTP_HOST/
+  # - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+  - curl --ftp-create-dirs
+       -T "{resume.pdf,resume-front-end.pdf}"
+       sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_HOST}${SFTP_PATH}
+  # travis not support ftp, must use sftp
+  # - curl --ftp-create-dirs -T "{resume.pdf,resume-front-end.pdf}" -u $FTP_USER:$FTP_PASS ftp://$FTP_HOST/
   # - ncftpput -R -v -F -t 60 -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / resume/build/resume.pdf
 
 addons:

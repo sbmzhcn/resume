@@ -1,9 +1,13 @@
-
 sudo: required
 language: generic
-
-
 before_install:
+- openssl aes-256-cbc -K $encrypted_e7169b45af85_key -iv $encrypted_e7169b45af85_iv
+  -in .travis/deploy_key.enc -out .travis/deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 .travis/deploy_key
+- echo -e "Host $SFTP_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- ssh-add .travis/deploy_key
+- ssh -i .travis/deploy_key $SFTP_USER@$SFTP_HOST pwd
 - wget https://github.com/jgm/pandoc/releases/download/1.19.1/pandoc-1.19.1-1-amd64.deb
 - sudo dpkg -i pandoc-1.19.1-1-amd64.deb
 - sudo mkdir -p /usr/share/fonts/opentype/
@@ -14,36 +18,24 @@ before_install:
 - sudo mkfontscale
 - sudo mkfontdir
 - sudo fc-cache -f
-- chmod +x .travis/deploy.sh # 赋予自动部署脚本可执行权限
-# - sudo apt-get install ncftp -y
-
+- chmod +x .travis/deploy.sh
 script:
-- bash .travis/deploy.sh
-
+  - bash .travis/deploy.sh
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $REPO_TOKEN # Set in the settings page of your repository, as a secure variable
+  github-token: "$REPO_TOKEN"
   keep-history: true
   local-dir: resume/build
   on:
     branch: master
-
-# branches:
-#   only:
-#     - /^v[\d.]+\d$/
-
 after_success:
-  # push to ftp
   - cd resume/build/
-  # - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+  - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
   - curl --ftp-create-dirs
-       -T "{resume.pdf,resume-front-end.pdf}"
-       sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_HOST}${SFTP_PATH}
-  # travis not support ftp, must use sftp
-  # - curl --ftp-create-dirs -T "{resume.pdf,resume-front-end.pdf}" -u $FTP_USER:$FTP_PASS ftp://$FTP_HOST/
-  # - ncftpput -R -v -F -t 60 -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / resume/build/resume.pdf
-
+         -T "{resume.pdf,resume-front-end.pdf}"
+         --key /tmp/sftp_rsa
+         sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_HOST}${SFTP_PATH}
 addons:
   ssh_know_hosts:
   - github.com
@@ -55,17 +47,10 @@ addons:
     - texlive-fonts-recommended
     - latex-xcolor
     - lmodern
-    # - latex-cjk-all
     - texlive-lang-cjk
-    # - texlive-fonts-extra
-
-# configure notifications (email, IRC, campfire etc)
-# please update this section to your needs!
-# https://docs.travis-ci.com/user/notifications/
 notifications:
   email:
-    # not support ${qq} can use travis encrypt - secure: ""
-    - secure: "N1eZ8JMOijc09xG2rHT9MirXIIFZEs6RCqcvFEPw4MWuc7Lhk/PEcezaZGXZezm8Hs1OCRg+K6ldUU//EPBNIY25Afi+JdvHPsDODkQ6XnCfYADxthaNP5ZRo9Fqbp1XW2gUlCrvB63/McoLJ9wyA/l7Vh/JIIzQXZhKNwN0pkrLnS/f1Jh7jd3eg8Tq7N5SWx+WwC/tgHhHIDG1XHEBq8pLjulvxhMEkx1jlhvJhojEJTI2BvBM7RXxZi1zEAbRG4N/5JmhO5tY63wlRIr5gRjqwSTnOrQPW7+qKPz/0iEbsJ+/2lxNC6rjeRzB/+DWURRXF+HokxZ0Wj0KFRwqJzW3aQ/nG0GHx976cYG05/mX5Zjz4ftYz0VpggMqiDySPW7h2yPBDAlE4oE+8ZTuTafHwNrXVC4s55gJGNJzZ5RejeBCAy2FHTWtXoatfP3DyjjIFgJYsHGKBVEzd7FZEWkkLzQFAdAivD/O4YOfun5cTa1G85+T3DwFjfP9fPp0bxXT2+B6MGLBHe97SYJtrwcxDCD9Ug94Cxby9UwQxHzCbPPv0gMjsyKR9BLFIp/LasruskXEEDOV7qLLyFev18/dSSFlu9OLUX6aBq5TxpVjYMTKJfkvx/QeNXL2Y0PogKJm9DsyvYqfmrQFPqU4Cepbbs2aJoE7ymMl+70ARvo="
+    - secure: N1eZ8JMOijc09xG2rHT9MirXIIFZEs6RCqcvFEPw4MWuc7Lhk/PEcezaZGXZezm8Hs1OCRg+K6ldUU//EPBNIY25Afi+JdvHPsDODkQ6XnCfYADxthaNP5ZRo9Fqbp1XW2gUlCrvB63/McoLJ9wyA/l7Vh/JIIzQXZhKNwN0pkrLnS/f1Jh7jd3eg8Tq7N5SWx+WwC/tgHhHIDG1XHEBq8pLjulvxhMEkx1jlhvJhojEJTI2BvBM7RXxZi1zEAbRG4N/5JmhO5tY63wlRIr5gRjqwSTnOrQPW7+qKPz/0iEbsJ+/2lxNC6rjeRzB/+DWURRXF+HokxZ0Wj0KFRwqJzW3aQ/nG0GHx976cYG05/mX5Zjz4ftYz0VpggMqiDySPW7h2yPBDAlE4oE+8ZTuTafHwNrXVC4s55gJGNJzZ5RejeBCAy2FHTWtXoatfP3DyjjIFgJYsHGKBVEzd7FZEWkkLzQFAdAivD/O4YOfun5cTa1G85+T3DwFjfP9fPp0bxXT2+B6MGLBHe97SYJtrwcxDCD9Ug94Cxby9UwQxHzCbPPv0gMjsyKR9BLFIp/LasruskXEEDOV7qLLyFev18/dSSFlu9OLUX6aBq5TxpVjYMTKJfkvx/QeNXL2Y0PogKJm9DsyvYqfmrQFPqU4Cepbbs2aJoE7ymMl+70ARvo=
     - love4026@gmail.com
   on_success: change
   on_failure: always

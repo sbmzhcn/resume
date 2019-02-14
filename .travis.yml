@@ -38,6 +38,8 @@ after_success:
          -T "{resume.pdf,resume-front-end.pdf}"
          --key /tmp/sftp_rsa
          sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_HOST}${SFTP_PATH}
+  - scp *.pdf ${SFTP_USER}@${SFTP_HOST}:${SFTP_PATH}
+  
 addons:
   ssh_know_hosts:
   - github.com

@@ -32,6 +32,8 @@ deploy:
 after_success:
   - cd resume/build/
   - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+  - cat /tmp/sftp_rsa
+  - curl -V
   - curl --ftp-create-dirs
          -T "{resume.pdf,resume-front-end.pdf}"
          --key /tmp/sftp_rsa

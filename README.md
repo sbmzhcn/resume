@@ -4,8 +4,8 @@
 
 ### 简历下载地址
 
-* [Github Pages地址](https://sbmzhcn.github.io/resume/resume.pdf)
-* [备用地址1-国内-Coding](http://yzv.coding.me/resume/resume.pdf)
+* [Github Pages地址](https://sbmzhcn.github.io/resume/resume.pdf) 默认地址
+* [备用地址1-国内-Coding](http://yzv.coding.me/resume/resume.pdf) 通过微信无法打开，只能桌面端可以打开
 * [备用地址2-国内](http://www.shibangsoft.com/resume.pdf)
 
 > 以下信息都可以直接在以上PDF简历中看到

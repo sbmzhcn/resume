@@ -39,5 +39,5 @@ git commit -m "resume.pdf updated: `date +"%Y-%m-%d %H:%M:%S"` [ci skip]"
 git push --force --quiet "https://yzv:${CO_TOKEN}@git.dev.tencent.com/yzv/yzv.coding.me.git" master:master
 
 # push to ftp
-ping -c 4 $FTP_HOST
+# ping -c 4 $FTP_HOST
 # ncftpput -R -v -u "$FTP_USER" -p "$FTP_PASS" $FTP_HOST / ../build/resume.pdf

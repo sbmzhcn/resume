@@ -11,3 +11,4 @@
 *.pdf.zip
 resume.pdf
 deploy_key
+.DS_Store

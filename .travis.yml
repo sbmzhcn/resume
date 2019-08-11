@@ -7,7 +7,7 @@ before_install:
 - chmod 600 .travis/deploy_key
 - echo -e "Host $SFTP_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add .travis/deploy_key
-- ssh -i .travis/deploy_key $SFTP_USER@$SFTP_HOST pwd
+# - ssh -i .travis/deploy_key $SFTP_USER@$SFTP_HOST pwd
 - wget https://github.com/jgm/pandoc/releases/download/1.19.1/pandoc-1.19.1-1-amd64.deb
 - sudo dpkg -i pandoc-1.19.1-1-amd64.deb
 - sudo mkdir -p /usr/share/fonts/opentype/
@@ -30,15 +30,16 @@ deploy:
   on:
     branch: master
 after_success:
-  - cd resume/build/
-  - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-  - cat /tmp/sftp_rsa
-  - curl -V
-  - curl --ftp-create-dirs
-         -T "{resume.pdf,resume-front-end.pdf}"
-         --key /tmp/sftp_rsa
-         sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_HOST}${SFTP_PATH}
-  - scp *.pdf ${SFTP_USER}@${SFTP_HOST}:${SFTP_PATH}
+  # - ssh -i .travis/deploy_key $SFTP_USER@$SFTP_HOST pwd
+  # - cd resume/build/
+  # - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+  # - cat /tmp/sftp_rsa
+  # - curl -V
+  # - curl --ftp-create-dirs
+  #        -T "{resume.pdf,resume-front-end.pdf}"
+  #        --key /tmp/sftp_rsa
+  #        sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_HOST}${SFTP_PATH}
+  # - scp *.pdf ${SFTP_USER}@${SFTP_HOST}:${SFTP_PATH}
   
 addons:
   ssh_know_hosts:

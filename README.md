@@ -1,8 +1,9 @@
-# 个人简历/My Resume [![Build Status](https://travis-ci.org/leadscloud/resume.svg?branch=master)](https://travis-ci.org/leadscloud/resume)
+# 个人简历/My Resume [![Build Status](https://travis-ci.org/leadscloud/resume.svg?branch=master)](https://travis-ci.org/leadscloud/resume) [![Netlify Status](https://api.netlify.com/api/v1/badges/f1102d91-e471-4ceb-9b49-ebb09b48f9c0/deploy-status)](https://app.netlify.com/sites/zhanglei/deploys)
 
 我的个人简历，使用 latex 创建，自动构建工具为 Travis, 每个发布会自动更新到 gh-pages 、coding.net 和 ftp上面。
 
 > 这简历没什么用，在我这个行业的人看不懂，看的懂的人这些经验又没多大用处
+    在互联网行业，做一个这样的简历还是有用的，在营销推广行业这种简历99.9%的人根本不知道有什么用。
 
     这次更新把一些用户名及网址更改过来，内容不变，不指望这简历有什么用
 
@@ -13,9 +14,14 @@
     * 面试时电话就沟通好薪资待遇，绝大部分HR是不专业的
     * 第一次面试，尽量直接让你未来的直属领导面试
 
+    由于这个简历上面突出了一些技术，所以会导致HR认为你不善于管理，工资会下调一个档，
+    在互联网行业这样写没问题，在营销圈子这样的简历只适合工作3年左右的人，
+    如果需要更高的工资，简历内容需要修改。
+
 ### 简历下载地址
 
 * [Github Pages地址](https://leadscloud.github.io/resume/resume.pdf) 默认地址
+* [国内访问地址](https://zhanglei.netlify.app/resume.pdf)
 
 以下已不再更新
 
